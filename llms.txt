@@ -1,0 +1,18 @@
+# androbeet — Archive
+
+> Andrew's independent archive of original essays on philosophy, atheism, feminism,
+> and psychology, published under the name androbeet.
+
+Andrew is a self-taught developer, philosopher, and writer working independently.
+This archive indexes his published essays (hosted on Medium) and other projects.
+His related site, the androbeet Lexicon (https://androbeet.github.io/), is a
+dictionary of original terminology he has coined, including Consortivulnus,
+Virilnorm, and Gendarchy.
+
+## Essays
+See data/articles.json for the full, current list of titles, links, and one-line
+descriptions — that file is the source of truth and is updated as new essays are
+published.
+
+## Contact
+androbeetz@gmail.com

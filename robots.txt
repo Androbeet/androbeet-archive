@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+
+Sitemap: https://androbeet.github.io/androbeet-archive/sitemap.xml

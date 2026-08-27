@@ -1,1 +1,339 @@
 
+/* androbeet-archive — matches the Lexicon's existing system:
+   black hero, white body, blood-maroon accent, bold sans display type */
+
+:root {
+  --black: #0B0B0C;
+  --white: #FFFFFF;
+  --ink: #111111;
+  --muted: #6B6B6B;
+  --line: #E5E5E5;
+  --maroon: #7A0C1F;
+  --max: 880px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ---- hero ---- */
+
+.hero {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 56px 24px 40px;
+}
+
+.hero .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #A8A8A8;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-family: 'Archivo Black', Arial, sans-serif;
+  font-size: clamp(40px, 10vw, 64px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+}
+
+.hero .tagline {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #A8A8A8;
+  margin-bottom: 18px;
+}
+
+.hero .byline {
+  font-size: 14px;
+  color: #C9C9C9;
+}
+
+.hero .byline a { color: var(--white); }
+.hero .byline strong { color: var(--white); }
+
+/* ---- category nav ---- */
+
+nav.categories {
+  background: #050505;
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid #232323;
+}
+
+nav.categories .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding: 16px 24px;
+}
+
+nav.categories a {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+  text-decoration: none;
+}
+
+nav.categories a:hover,
+nav.categories a:focus-visible,
+nav.categories a.active { color: var(--white); }
+
+/* ---- content ---- */
+
+main { padding: 56px 0 100px; }
+
+.bundle-label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.bundle-title {
+  font-family: 'Archivo Black', Arial, sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.entry {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:last-child { border-bottom: none; }
+
+.entry h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.entry .meta {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.entry p { margin: 0 0 14px; max-width: 68ch; }
+
+.entry .link {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--maroon);
+}
+
+.entry .todo {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: #F4F4F4;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+/* ---- footer ---- */
+
+footer {
+  background: var(--black);
+  color: #8A8A8A;
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+footer a { color: var(--white); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---- social/contact bar ---- */
+
+.social-bar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.social-bar a {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid #3A3A3A;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+.social-bar a:hover,
+.social-bar a:focus-visible {
+  border-color: var(--white);
+}
+
+/* ---- essay grid ---- */
+
+.essay-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.essay-card {
+  border: 1px solid var(--line);
+  padding: 22px;
+  border-radius: 4px;
+}
+
+.essay-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.essay-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.essay-card h3 a:hover,
+.essay-card h3 a:focus-visible {
+  color: var(--maroon);
+}
+
+.essay-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.essay-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.essay-card .tag {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: #F4F4F4;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.essay-card .paid-badge {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  border: 1px solid var(--maroon);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.essay-card .read {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--maroon);
+}
+
+/* ---- paid-note banner ---- */
+
+.paid-note {
+  background: #F9F4F1;
+  border: 1px solid #EAD9CD;
+  border-radius: 4px;
+  padding: 14px 18px;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.paid-note a { color: var(--maroon); }
+
+/* ---- admin tool form (tools/add-article.html) ---- */
+
+.tool-page { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+
+.tool-page label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 18px 0 6px;
+}
+
+.tool-page input[type="text"],
+.tool-page input[type="url"],
+.tool-page textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.tool-page textarea { min-height: 80px; resize: vertical; }
+
+.tool-page button {
+  margin-top: 22px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.tool-page pre {
+  margin-top: 22px;
+  background: #F4F4F4;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

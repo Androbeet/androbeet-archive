@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>androbeet — Add Article</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="tool-page">
+    <h1 style="font-family:'Inter',sans-serif;font-weight:800;">Add a Medium article</h1>
+    <p style="color:var(--muted);font-size:14px;">
+      Fill this in, tap Generate, then copy the result into <code>data/articles.json</code>
+      (open it in the GitHub app → Edit → paste it inside the square brackets, above the
+      last entry, followed by a comma). Push commits automatically once you save.
+    </p>
 
+    <label for="title">Title</label>
+    <input type="text" id="title" placeholder="How Religious Creation Myths...">
+
+    <label for="url">Medium URL</label>
+    <input type="url" id="url" placeholder="https://medium.com/...">
+
+    <label for="desc">One-line description (your own words, not the article text)</label>
+    <textarea id="desc" placeholder="What the piece argues, in a sentence."></textarea>
+
+    <label for="tags">Tags (comma separated)</label>
+    <input type="text" id="tags" placeholder="Philosophy, Feminism">
+
+    <label style="display:flex;align-items:center;gap:8px;margin-top:18px;">
+      <input type="checkbox" id="paid" style="width:auto;">
+      This article is paywalled
+    </label>
+
+    <button onclick="generate()">Generate</button>
+
+    <pre id="output" style="display:none;"></pre>
+  </div>
+
+  <script>
+    function generate() {
+      const title = document.getElementById('title').value.trim();
+      const url = document.getElementById('url').value.trim();
+      const desc = document.getElementById('desc').value.trim();
+      const tags = document.getElementById('tags').value
+        .split(',').map(t => t.trim()).filter(Boolean);
+      const paid = document.getElementById('paid').checked;
+
+      const entry = {
+        title, url, description: desc, tags, paid
+      };
+
+      const out = document.getElementById('output');
+      out.style.display = 'block';
+      out.textContent = JSON.stringify(entry, null, 2) + ',';
+    }
+  </script>
+</body>
+</html>
